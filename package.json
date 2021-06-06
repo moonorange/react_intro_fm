@@ -1,0 +1,23 @@
+{
+  "name": "intro_to_react_fm",
+  "version": "1.0.0",
+  "description": "Study about React from ground up via following course.",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.{js,jsx}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moonorange/react_intro_fm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moonorange/react_intro_fm/issues"
+  },
+  "homepage": "https://github.com/moonorange/react_intro_fm#readme",
+  "devDependencies": {
+    "prettier": "^2.3.1"
+  }
+}
