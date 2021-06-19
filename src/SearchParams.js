@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Pet from "./Pet";
 import useBreedList from "./useBreedList";
+import Results from "./Results";
 
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 
@@ -28,7 +29,7 @@ const SearchParams = () => {
     <div className="search-params">
       <form
         onSubmit={(e) => {
-          e.preventDefault();
+          e.preventDefault(); // Block the default action of an event(in this case refreshing browsers).
           requestPets();
         }}
       >
@@ -47,7 +48,7 @@ const SearchParams = () => {
             id="animal"
             value={animal}
             onChange={(e) => updateAnimal(e.target.value)}
-            onBlur={(e) => updateAnimal(e.target.value)}
+            onBlur={(e) => updateAnimal(e.target.value)} // The blur event is raised when an element loses focus.
           >
             <option />
             {ANIMALS.map((animal) => (
@@ -76,14 +77,7 @@ const SearchParams = () => {
         </label>
         <button>Submit</button>
       </form>
-      {pets.map((pet) => (
-        <Pet
-          name={pet.name}
-          animal={pet.animal}
-          breed={pet.breed}
-          key={pet.id}
-        />
-      ))}
+      <Results pets={pets}/>
     </div>
   );
 };
