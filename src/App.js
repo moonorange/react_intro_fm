@@ -1,8 +1,8 @@
-import ReactDOM from "react-dom";
-import SearchParams from "./SearchParams";
-import Details from "./Details";
+import { useState, StrictMode } from "react";
+import { render } from "react-dom";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import { StrictMode, useState } from "react";
+import Details from "./Details";
+import SearchParams from "./SearchParams";
 import ThemeContext from "./ThemeContext";
 
 const App = () => {
@@ -28,4 +28,9 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+  document.getElementById("root")
+);
