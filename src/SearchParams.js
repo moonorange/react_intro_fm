@@ -1,8 +1,7 @@
-import { useEffect, useState, useContext } from "react";
-import Pet from "./Pet";
+import { useState, useEffect, useContext } from "react";
+import ThemeContext from "./ThemeContext";
 import useBreedList from "./useBreedList";
 import Results from "./Results";
-import ThemeContext from "./ThemeContext";
 
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 
@@ -31,7 +30,7 @@ const SearchParams = () => {
     <div className="search-params">
       <form
         onSubmit={(e) => {
-          e.preventDefault(); // Block the default action of an event(in this case refreshing browsers).
+          e.preventDefault();
           requestPets();
         }}
       >
@@ -50,7 +49,7 @@ const SearchParams = () => {
             id="animal"
             value={animal}
             onChange={(e) => updateAnimal(e.target.value)}
-            onBlur={(e) => updateAnimal(e.target.value)} // The blur event is raised when an element loses focus.
+            onBlur={(e) => updateAnimal(e.target.value)}
           >
             <option />
             {ANIMALS.map((animal) => (
